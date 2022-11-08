@@ -1,3 +1,6 @@
+import { requestCreatePet } from "./requests.js";
+
+
 export const openMenuNav = () => {
   const buttonOpen = document.querySelector("#btnModalNav");
   const modal = document.querySelector("#modalNav");
@@ -124,7 +127,7 @@ export const openCreatePetModal = async (token) => {
       });
 
       requestCreatePet(token, body);
-      // location.reload();
+      window.location.reload()
     });
   });
   btnCloseModal.onclick = () => {
