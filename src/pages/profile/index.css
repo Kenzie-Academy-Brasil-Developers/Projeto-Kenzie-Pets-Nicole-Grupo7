@@ -1,0 +1,203 @@
+aside {
+    width: 100vw;
+    height: 220px;
+    background-color: var(--color-brand-orange);
+    display: flex;
+    justify-content: center;
+}
+
+aside img {
+    margin-top: 4rem;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 6px solid var(--color-grey-1000);
+
+}
+
+.userprofile {
+    width: 100%;
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+}
+
+.user-data-box {
+    width: 90%;
+    box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.user-data-box h3 {
+    text-align: center;
+    font-size: 24px;
+    color: var(--color-brand-orange);
+    margin-bottom: 1rem;
+}
+
+.user-data-box span {
+    color: var(--color-brand-orange);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.user-data-box p {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.buttons-profile-box {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/*=======buttons =========*/
+.btnYellow-box {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+    width: 90%;
+    background: var(--color-brand-orange);
+    border-radius: 16px;
+    padding: 4px 16px;
+    gap: 10px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--color-grey-1000);
+    cursor: pointer;
+}
+
+.btndelete {
+    border: 2px solid #EA534A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+    width: 90%;
+    background: transparent;
+    border-radius: 16px;
+    padding: 4px 16px;
+    gap: 10px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #EA534A;
+    cursor: pointer;
+
+
+}
+
+.teste {
+    height: 900px;
+
+}
+
+#btnCreatePet{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px;
+    background: #33CC66;
+    color: aliceblue;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.ulRenderAllMyPets{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    gap: 1rem;
+    overflow: scroll;
+}
+
+.ulRenderAllMyPets li{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    gap: 1rem;
+    box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
+    border-radius: 4px
+}
+
+.ulRenderAllMyPets li > img {
+    width: 35%;
+    border-radius: 4px 0 0 4px;
+}
+
+.ulRenderAllMyPets li > section {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+}
+
+strong{
+    color: var(--color-brand-orange);
+}
+
+@media (min-width: 800px) {
+    .user-data-box {
+        width: 480px;
+    }
+
+    .buttons-profile-box {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .btnYellow-box {
+        width: 200px;
+    }
+
+    .btndelete {
+        width: 150px;
+    }
+
+    .containerSectionMyPets{
+        width: 1100px;
+        margin: 0 auto;
+    }
+
+
+    .ulRenderAllMyPets{
+        width: 1100px;
+        height: 80vh;
+        padding: 0.5rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow: none;
+    }
+    
+    .ulRenderAllMyPets li{
+        width: 480px;
+        height: 200px;
+    }
+
+}

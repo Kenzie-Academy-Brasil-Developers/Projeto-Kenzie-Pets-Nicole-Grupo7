@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="headerprofile.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="/src/styles/modal.css">
+    <link rel="stylesheet" href="/src/styles/inputs.css">
+    <link rel="stylesheet" href="/src/styles/buttons.css">
+
+=======
+    <link rel="stylesheet" href="../../styles/modal.css">
+>>>>>>> c989b5e89a3ec8dbcfe61d5a58592482798815fe
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="containerHeader">
+            <div class="containerLogo">
+                <div class="containerImg">
+                    <img src="../../assets/logo.png" alt="" />
+                </div>
+                <h2>Kenzie Pets</h2>
+            </div>
+            <nav>
+                <div>
+                    <button id="btnlogout" class="btnRegister">Logout</button>
+                </div>
+                <button id="btnModalNav">
+                    <img class="imgBtnNav" src="../../assets/btn menu.png" alt="" />
+                </button>
+                <dialog id="modalNav">
+                    <div class="containerNav">
+                        <button id="btnCloseNav">
+                            <img src="../../assets/x.png" alt="" />
+                        </button>
+                        <div class="btnsModalNav">
+                            <button class="btnRegister">Cadastrar</button>
+                            <button class="btnLogin">Fazer Login</button>
+                        </div>
+                    </div>
+                </dialog>
+            </nav>
+        </div>
+    </header>
+    <aside>
+        <img id="useravatar" src="" alt="">
+    </aside>
+    <section class="userprofile">
+        <div class="user-data-box">
+            <h3>Dados pessoais</h3>
+            <div class="info-user">
+                <p id="username"></p>
+                <p id="useremail"></p>
+                <p><span> data de nascimento: </span> 17/05/1997</p>
+            </div>
+            <div class="buttons-profile-box">
+                <button class="btnYellow-box">Atualizar informações</button>
+                <button class="btndelete">Deletar conta</button>
+
+            </div>
+        </div>
+    </section>
+    <section class="containerSectionMyPets"><!-- section all pets-->
+        <button id="btnCreatePet">Cadastrar novo pet</button>
+        <dialog id="modalCreatepet">
+            <div class="containerModal">
+              <div class="paddingTop"></div>
+              <button id="btnCloseCreatePet">X</button>
+              <div class="containerFormRegister">
+                <h2>Cadastrar pet</h2>
+                <form id="createPetForm">
+                  <input
+                    class="inputForm"
+                    id="name"
+                    placeholder="Nome"
+                    type="text"
+                    required
+                  />
+                  <input
+                    class="inputForm"
+                    id="bread"
+                    placeholder="Raça"
+                    type="text"
+                    required
+                  />
+                  <select class="inputForm" id="species">
+                    <option value="">Seleccione especie</option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Aves">Aves</option>
+                    <option value="Repteis">Repteis</option>
+                    <option value="Outros">Outros</option>
+                  </select>
+                  <input
+                  class="inputForm"
+                  id="avatar_url"
+                  placeholder="link foto de pet"
+                  type="url"
+                  required
+                  />
+                  <button class="btnFormYellow">Cadatstrar</button>
+                </form>
+              </div>
+              <div class="paddingBottom"></div>
+            </div>
+        </dialog>
+        <ul class="ulRenderAllMyPets"></ul>
+    </section>
+
+
+
+
+
+
+    <div class="teste">
+        
+    </div>
+
+
+    {
+        "name": "Aukan12345",
+        "bread": "SRD",
+        "species": "Cachorro",
+        "avatar_url": "https://fishsubsidy.org/wp-content/uploads/2020/01/jack-russell-terrier-health.jpg"
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>

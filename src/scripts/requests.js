@@ -139,12 +139,4 @@ async function deleteProfile(token) {
   }
 }
 
-export {
-  registerUser,
-  requestLogin,
-  requestCreateUser,
-  requestGetAllUsers,
-  requestReadProfile,
-  requestUpdateProfile,
-  deleteProfile,
-};
+

@@ -1,4 +1,3 @@
-import { registerUser, requestLogin } from "./requests.js";
 
 export const openMenuNav = () => {
   const buttonOpen = document.querySelector("#btnModalNav");
@@ -74,13 +73,3 @@ export const openLoginModal = async () => {
   };
 };
 
-export const openLoginAuto = () => {
-  const modal = document.querySelector("#modalLogin");
-  modal.showModal();
-  return modal;
-};
-export const closeRegisterAuto = () => {
-  const modal = document.querySelector("#modalRegister");
-  modal.close();
-  return modal;
-};
