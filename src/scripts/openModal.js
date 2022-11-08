@@ -1,3 +1,5 @@
+import { registerUser, requestLogin } from "./requests.js";
+
 export const openMenuNav = () => {
   const buttonOpen = document.querySelector("#btnModalNav");
   const modal = document.querySelector("#modalNav");
@@ -32,9 +34,12 @@ export const openRegisterModal = async () => {
       const body = {};
 
       elements.forEach((ele) => {
-        body[ele.id] = ele.value;
+        if (ele.tagName == "INPUT") {
+          body[ele.id] = ele.value;
+        }
+        ele.innetHTML = "";
       });
-      console.log(body);
+      registerUser(body);
     });
   });
   btnCloseModal.onclick = () => {
@@ -50,8 +55,32 @@ export const openLoginModal = async () => {
     element.addEventListener("click", async (e) => {
       modal.showModal();
     });
+    const form = document.querySelector("#loginModal");
+    const elements = [...form.elements];
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const body = {};
+      elements.forEach((ele) => {
+        if (ele.tagName == "INPUT") {
+          body[ele.id] = ele.value;
+        }
+      });
+      await requestLogin(body);
+    });
   });
   btnCloseModal.onclick = () => {
     modal.close();
   };
+};
+
+export const openLoginAuto = () => {
+  const modal = document.querySelector("#modalLogin");
+  modal.showModal();
+  return modal;
+};
+export const closeRegisterAuto = () => {
+  const modal = document.querySelector("#modalRegister");
+  modal.close();
+  return modal;
 };
