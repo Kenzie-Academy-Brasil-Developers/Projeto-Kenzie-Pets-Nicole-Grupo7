@@ -102,6 +102,7 @@ header {
   }
   #btnCloseNav {
     position: absolute;
+    display: flex;
     right: 30px;
     top: -55px;
     background-color: transparent;

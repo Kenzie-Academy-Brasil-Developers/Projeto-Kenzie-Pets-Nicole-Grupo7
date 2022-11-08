@@ -140,23 +140,3 @@ async function deleteProfile(token){
   }
 }
 
-async function requestAllPets(token) {
-  try{
-    const request = await fetch(baseUrl + "/pets", {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-
-    if(request.ok){
-        const response = await request.json()
-        return response            
-    }
-}catch(err){
-        console.log(err)
-}
-}
-
-export {registerUser, requestLogin, requestCreateUser, requestGetAllUsers, requestReadProfile, requestUpdateProfile, deleteProfile, requestAllPets}
-

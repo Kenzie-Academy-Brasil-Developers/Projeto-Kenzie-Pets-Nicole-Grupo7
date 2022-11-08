@@ -1,4 +1,8 @@
-import { openMenuNav } from "../../scripts/openModal.js";
+import { logout } from "../../scripts/logout.js";
+import { openMenuNavProfile } from "../../scripts/openModalProfile.js";
+import {renderProfileUser} from "../../scripts/render.js"
 
 
-openMenuNav()
+openMenuNavProfile()
+renderProfileUser()
+logout()
