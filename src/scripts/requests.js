@@ -140,5 +140,24 @@ async function deleteProfile(token){
   }
 }
 
-export {registerUser, requestLogin, requestCreateUser, requestGetAllUsers, requestReadProfile, requestUpdateProfile, deleteProfile}
+export async function createPet(body) {
+  try {
+    const request = await fetch(`${baseUrl}/pets`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    if (request.ok) {
+      console.log("deu certo")
+    } else {
+      console.log("deu ruim");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export {registerUser, requestLogin, requestCreateUser, requestGetAllUsers, requestReadProfile, requestUpdateProfile, deleteProfile, createPet}
 
