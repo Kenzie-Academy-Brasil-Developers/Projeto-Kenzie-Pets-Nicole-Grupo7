@@ -20,7 +20,7 @@ dialog .containerModal {
 }
 
 dialog .containerModal #btnCloseRegister,
-#btnCloseLogin {
+#btnCloseLogin, #btnCloseCreatePet {
   border: none;
   background-color: transparent;
   position: absolute;
@@ -130,3 +130,7 @@ dialog .containerModal .paddingBottom {
   line-height: 11px;
   color: var(--color-brand-orange);
 }
+
+
+/* -----------------Modal Create Pet----------------*/
+

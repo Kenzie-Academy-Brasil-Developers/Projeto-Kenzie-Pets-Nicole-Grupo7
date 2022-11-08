@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="headerprofile.css">
     <link rel="stylesheet" href="../../styles/globalStyles.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="/src/styles/modal.css">
+    <link rel="stylesheet" href="/src/styles/inputs.css">
+    <link rel="stylesheet" href="/src/styles/buttons.css">
+
+=======
     <link rel="stylesheet" href="../../styles/modal.css">
+>>>>>>> c989b5e89a3ec8dbcfe61d5a58592482798815fe
     <title>Document</title>
 </head>
 
@@ -60,8 +67,51 @@
             </div>
         </div>
     </section>
-    <section><!-- section all pets-->
-
+    <section class="containerSectionMyPets"><!-- section all pets-->
+        <button id="btnCreatePet">Cadastrar novo pet</button>
+        <dialog id="modalCreatepet">
+            <div class="containerModal">
+              <div class="paddingTop"></div>
+              <button id="btnCloseCreatePet">X</button>
+              <div class="containerFormRegister">
+                <h2>Cadastrar pet</h2>
+                <form id="createPetForm">
+                  <input
+                    class="inputForm"
+                    id="name"
+                    placeholder="Nome"
+                    type="text"
+                    required
+                  />
+                  <input
+                    class="inputForm"
+                    id="bread"
+                    placeholder="Raça"
+                    type="text"
+                    required
+                  />
+                  <select class="inputForm" id="species">
+                    <option value="">Seleccione especie</option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Aves">Aves</option>
+                    <option value="Repteis">Repteis</option>
+                    <option value="Outros">Outros</option>
+                  </select>
+                  <input
+                  class="inputForm"
+                  id="avatar_url"
+                  placeholder="link foto de pet"
+                  type="url"
+                  required
+                  />
+                  <button class="btnFormYellow">Cadatstrar</button>
+                </form>
+              </div>
+              <div class="paddingBottom"></div>
+            </div>
+        </dialog>
+        <ul class="ulRenderAllMyPets"></ul>
     </section>
 
 
@@ -74,7 +124,12 @@
     </div>
 
 
-
+    {
+        "name": "Aukan12345",
+        "bread": "SRD",
+        "species": "Cachorro",
+        "avatar_url": "https://fishsubsidy.org/wp-content/uploads/2020/01/jack-russell-terrier-health.jpg"
+    }
 
 
 
