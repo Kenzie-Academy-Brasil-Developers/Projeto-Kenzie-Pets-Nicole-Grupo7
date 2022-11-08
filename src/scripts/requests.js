@@ -1,6 +1,6 @@
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com";
 
-export async function registerUser(body) {
+async function registerUser(body) {
   try {
     const request = await fetch(`${baseUrl}/users`, {
       method: "POST",
@@ -139,6 +139,7 @@ async function deleteProfile(token){
           console.log(err)
   }
 }
+
 
 export {registerUser, requestLogin, requestCreateUser, requestGetAllUsers, requestReadProfile, requestUpdateProfile, deleteProfile}
 
