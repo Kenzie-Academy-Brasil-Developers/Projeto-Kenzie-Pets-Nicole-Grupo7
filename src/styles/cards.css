@@ -1,0 +1,65 @@
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+ul {
+  display: flex;
+  gap: 60px;
+}
+.containerCard {
+  min-width: 250px;
+  width: 260px;
+  height: 450px;
+  background-color: var(--color-brand-cards);
+  border-radius: 155px 45px 225px 75px/15px 125px 15px 155px;
+  padding: 40px;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.containerCard .containerPicture {
+  width: 100%;
+  height: 185px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 155px 45px 225px 75px/15px 125px 15px 155px;
+}
+.containerCard .containerPicture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 155px 45px 225px 75px/15px 125px 15px 155px;
+}
+.containerCard .containerInfoPet {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.containerCard .containerInfoPet h3 {
+  color: var(--color-brand-brown);
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.containerCard .containerInfoPet p {
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-grey-400);
+}
+.containerCard button {
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-grey-1000);
+  padding: 10px 10px;
+  background-color: #f9575c;
+  border: 1px solid #f9575c;
+  border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+}
+.containerCard button:hover {
+  background-color: #f9be4f;
+  border: 1px solid #f9be4f;
+}
