@@ -1,55 +1,58 @@
-<<<<<<< HEAD
-import {requestReadAllMyPets} from "./requests.js"
+import { requestReadAllMyPets } from "./requests.js";
 
+export async function renderAllMyPets(token) {
+  const ul = document.querySelector(".ulRenderAllMyPets");
 
-export async function renderAllMyPets (token){
+  const list = await requestReadAllMyPets(token);
 
-    const ul = document.querySelector(".ulRenderAllMyPets")
+  list.forEach((element) => {
+    const {
+      id,
+      name,
+      bread,
+      species,
+      available_for_adoption,
+      avatar_url,
+      guardian_id,
+    } = element;
 
-    const list = await requestReadAllMyPets(token)
+    function available() {
+      if (available_for_adoption) {
+        return "Sim";
+      }
+      return "Não";
+    }
 
-    list.forEach(element => {
-        
-        const {id, name, bread, species, available_for_adoption, avatar_url, guardian_id} = element
-        
-        function available (){
-            if(available_for_adoption){
-                return "Sim"
-            }
-            return "Não"
-        }
-
-        ul.insertAdjacentHTML("beforeend", `
+    ul.insertAdjacentHTML(
+      "beforeend",
+      `
         
         <li>
         <img src="${avatar_url}" alt="${name}">
         <section>
           <p><strong>Nome:</strong> ${name}</p>
           <p><strong>Espécie:</strong> ${species}</p>
-          <p><strong>Adotável:</strong> ${available ()}</p>
+          <p><strong>Adotável:</strong> ${available()}</p>
           <button id="${id}" class="btnYellow-box"> Atualizar </button>
         </section>
         </li>
-        `)
-    });
-    
+        `
+    );
+  });
 }
 
-=======
 import { requestReadProfile } from "./requests.js";
 
-
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Njc5MTg0MjMsImV4cCI6MTY2ODUyMzIyMywic3ViIjoiMWJjYTNlNzUtNjIwNS00NmNmLTk3ZWYtMGE1NDllYzk0YzRjIn0.zURUiOyxu0CjoHk7WNQ5ndn6XCePzWzMmSP7hbtXVOQ"
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Njc5MTg0MjMsImV4cCI6MTY2ODUyMzIyMywic3ViIjoiMWJjYTNlNzUtNjIwNS00NmNmLTk3ZWYtMGE1NDllYzk0YzRjIn0.zURUiOyxu0CjoHk7WNQ5ndn6XCePzWzMmSP7hbtXVOQ";
 //============== render profile ===================
-export async function renderProfileUser(){
-    const request = await requestReadProfile(token)
-    const avatarUser = document.querySelector('#useravatar')
-    const nameUser = document.querySelector('#username')
-    const emailUser = document.querySelector('#useremail')
+export async function renderProfileUser() {
+  const request = await requestReadProfile(token);
+  const avatarUser = document.querySelector("#useravatar");
+  const nameUser = document.querySelector("#username");
+  const emailUser = document.querySelector("#useremail");
 
-    avatarUser.src = `${request.avatar_url}`
-    nameUser.innerHTML = `<span>nome: </span> ${request.name}`
-    emailUser.innerHTML = `<span>email: </span> ${request.email}`
-
+  avatarUser.src = `${request.avatar_url}`;
+  nameUser.innerHTML = `<span>nome: </span> ${request.name}`;
+  emailUser.innerHTML = `<span>email: </span> ${request.email}`;
 }
->>>>>>> c989b5e89a3ec8dbcfe61d5a58592482798815fe

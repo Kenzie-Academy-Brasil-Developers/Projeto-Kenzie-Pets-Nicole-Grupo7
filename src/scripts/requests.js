@@ -138,5 +138,68 @@ async function deleteProfile(token) {
     console.log(err);
   }
 }
+async function requestCreatePet(token, body) {
+  try {
+    const request = await fetch(`${baseUrl}/pets`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(body),
+    });
+    if (request.ok) {
+      console.log("deu certo");
+    } else {
+      console.log("deu ruim");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+async function requestReadAllMyPets(token) {
+  try {
+    const request = await fetch(baseUrl + "/pets/my_pets", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
+    if (request.ok) {
+      const response = await request.json();
+      return response;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+async function requestAllPets(token) {
+  try {
+    const request = await fetch(baseUrl + "/pets", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (request.ok) {
+      const response = await request.json();
+      return response;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
 
+export {
+  requestReadAllMyPets,
+  requestCreatePet,
+  registerUser,
+  requestLogin,
+  requestCreateUser,
+  requestGetAllUsers,
+  requestReadProfile,
+  requestUpdateProfile,
+  deleteProfile,
+  requestAllPets,
+};
