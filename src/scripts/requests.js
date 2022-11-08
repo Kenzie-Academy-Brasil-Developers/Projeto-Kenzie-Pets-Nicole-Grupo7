@@ -1,6 +1,6 @@
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com";
 
-export async function registerUser(body) {
+async function registerUser(body) {
   try {
     const request = await fetch(`${baseUrl}/users`, {
       method: "POST",
@@ -140,5 +140,23 @@ async function deleteProfile(token){
   }
 }
 
-export {registerUser, requestLogin, requestCreateUser, requestGetAllUsers, requestReadProfile, requestUpdateProfile, deleteProfile}
+async function requestAllPets(token) {
+  try{
+    const request = await fetch(baseUrl + "/pets", {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+
+    if(request.ok){
+        const response = await request.json()
+        return response            
+    }
+}catch(err){
+        console.log(err)
+}
+}
+
+export {registerUser, requestLogin, requestCreateUser, requestGetAllUsers, requestReadProfile, requestUpdateProfile, deleteProfile, requestAllPets}
 

@@ -1,0 +1,75 @@
+
+.all-pets-box {
+    gap: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+  .all-pets-card {
+    min-width: 230px;
+    width: 230px;
+    height: 430px;
+    background-color: var(--color-brand-cards);
+    border-radius: 155px 45px 225px 75px/15px 125px 15px 155px;
+    padding: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .all-pets-card .all-pets-figure {
+    width: 160px;
+    height: 155px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 155px 45px 225px 75px/15px 125px 15px 155px;
+  }
+  .all-pets-card .all-pets-figure img {
+    width: 100%;
+    height: 100%;
+    border-radius: 155px 45px 225px 75px/15px 125px 15px 155px;
+  }
+  
+  .all-pets-card  h3 {
+    color: var(--color-brand-brown);
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .all-pets-card  p {
+    font-family: "Open Sans", sans-serif;
+    color: var(--color-grey-400);
+  }
+  .all-pets-card .available-for-adoption-btn {
+    border: none;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-grey-1000);
+    padding: 7px 11px;
+    background-color: #f9575c;
+    border: 1px solid #f9575c;
+    border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+  }
+  .all-pets-card .available-for-adoption-btn:hover {
+    background-color: #f9be4f;
+    border: 1px solid #f9be4f;
+  }
+
+  .all-pets-card .already-adopted-btn {
+    border: none;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-grey-1000);
+    padding: 7px 9px;
+    background-color: #f95790a0;
+    border: 1px solid #f95790a0;
+    border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+  }
+
+  .all-pets-card .already-adopted-btn:hover {
+    background-color: #f98a4f;
+    border: 1px solid #f98e4f;
+  }
