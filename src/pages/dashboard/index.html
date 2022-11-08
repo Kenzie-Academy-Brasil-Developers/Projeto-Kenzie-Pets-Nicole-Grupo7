@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/allPets.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../../styles/buttons.css" />
+    <link rel="stylesheet" href="../../styles/cards.css"> 
+    <!-- <link rel="stylesheet" href="../../styles/positioning.css"> -->
+    <!-- <link rel="stylesheet" href="../../styles/inputs.css"> -->
+    <!-- <link rel="stylesheet" href="../../styles/modal.css"> -->
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <div class="containerHeader">
+          <div class="containerLogo">
+            <div class="containerImg">
+              <img src="../../assets/logo.png" alt="" />
+            </div>
+            <h2>Kenzie Pets</h2>
+          </div>
+          <nav>
+            <div>
+              <button class="btn-profile">perfil</button>
+              <button class="btn-logout">Logout</button>
+            </div>
+            <button class="hidden" id="btnModalNav">
+              <img class="imgBtnNav" src="../../assets/btn menu.png" alt="" />
+            </button>
+            <dialog id="modalNav">
+              <div class="containerNav">
+                <button id="btnCloseNav">
+                  <img src="../../assets/x.png" alt="" />
+                </button>
+                <div class="btnsModalNav">
+                  <button class="btn-profile">Perfil</button>
+                  <button class="btn-logout">Logout</button>
+                </div>
+              </div>
+            </dialog>
+          </nav>
+        </div>
+      </header>
+    <main>
+        <ul class="all-pets-box"></ul>
+    </main>  
+</body>
+<script type="module" src="./index.js"></script>
+</html>

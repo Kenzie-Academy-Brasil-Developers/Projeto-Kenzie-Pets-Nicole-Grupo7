@@ -58,6 +58,7 @@ export const openLoginModal = async () => {
   };
 };
 
+<<<<<<< HEAD
 export const openCreatePetModal = async (token) => {
 
   const buttonOpen = document.querySelectorAll("#btnCreatePet");
@@ -91,3 +92,20 @@ export const openCreatePetModal = async (token) => {
     modal.close();
   };
 }
+=======
+export const openMenuNavDashboard = () => {
+  const buttonOpen = document.querySelector("#btnModalNav");
+  const modal = document.querySelector("#modalNav");
+  const img = document.querySelector(".imgBtnNav");
+  const btnClose = document.querySelector("#btnCloseNav");
+
+  buttonOpen.onclick = () => {
+    img.src = "";
+    modal.show();
+  };
+  btnClose.onclick = () => {
+    img.src = "../../assets/btn menu.png";
+    modal.close();
+  };
+};
+>>>>>>> c989b5e89a3ec8dbcfe61d5a58592482798815fe

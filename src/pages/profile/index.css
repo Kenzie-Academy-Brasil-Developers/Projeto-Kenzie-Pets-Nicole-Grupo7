@@ -1,13 +1,13 @@
 aside {
     width: 100vw;
-    height: 192px;
+    height: 220px;
     background-color: var(--color-brand-orange);
     display: flex;
     justify-content: center;
 }
 
 aside img {
-    margin-top: 2rem;
+    margin-top: 4rem;
     width: 320px;
     height: 320px;
     border-radius: 50%;
