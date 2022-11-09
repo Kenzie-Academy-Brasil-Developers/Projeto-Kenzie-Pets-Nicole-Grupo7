@@ -96,6 +96,7 @@
           </div>
 
         </div>
+
         <div class="paddingBottom"></div>
       </div>
     </dialog>
@@ -132,6 +133,52 @@
   </section>
 
   <div class="teste"></div>
+
+      </dialog>
+      <ul class="ulRenderAllMyPets"></ul>
+      <!-- Modal editar pet-->
+
+      <dialog id="modalEditpet">
+        <div class="containerModal">
+          <div class="paddingTop"></div>
+          <button id="btnCloseEditPet">X</button>
+          <div class="containerFormRegister">
+            <h2>Editar pet</h2>
+            <form id="editPetForm">
+              <input
+                class="inputForm"
+                id="name"
+                placeholder="Nome"
+                type="text"
+              />
+              <input
+                class="inputForm"
+                id="bread"
+                placeholder="Raça"
+                type="text"
+              />
+              <select class="inputForm" id="species">
+                <option value="">Seleccione especie</option>
+                <option value="Cachorro">Cachorro</option>
+                <option value="Gato">Gato</option>
+                <option value="Aves">Aves</option>
+                <option value="Repteis">Repteis</option>
+                <option value="Outros">Outros</option>
+              </select>
+              <input
+                class="inputForm"
+                id="avatar_url"
+                placeholder="link foto de pet"
+                type="url"
+              />
+              <button class="btnFormYellow">Editar</button>
+            </form>
+          </div>
+          <div class="paddingBottom"></div>
+        </div>
+      </dialog>
+    </section>
+
 
   <script type="module" src="index.js"></script>
 </body>

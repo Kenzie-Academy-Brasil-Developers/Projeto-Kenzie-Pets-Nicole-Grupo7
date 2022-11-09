@@ -1,5 +1,7 @@
 import { getUserTokenLocalStorage } from "./localStorage.js";
+import { modalEditpet } from "./openModal.js";
 import { requestReadAllMyPets } from "./requests.js";
+const token = getUserTokenLocalStorage();
 
 export async function renderAllMyPets(token) {
   const ul = document.querySelector(".ulRenderAllMyPets");
@@ -34,17 +36,28 @@ export async function renderAllMyPets(token) {
           <p><strong>Nome:</strong> ${name}</p>
           <p><strong>Espécie:</strong> ${species}</p>
           <p><strong>Adotável:</strong> ${available()}</p>
-          <button id="${id}" class="btnYellow-box"> Atualizar </button>
+          <button id="${id}" class="btnYellow-box btnEditPet"> Atualizar </button>
         </section>
         </li>
         `
     );
   });
+  ul.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    if (e.target.tagName == "BUTTON") {
+      console.log(e.target.id);
+      await modalEditpet(token, e.target.id);
+    }
+  });
 }
 
 import { requestReadProfile } from "./requests.js";
 
+
 const token  = getUserTokenLocalStorage();
+
+
 //============== render profile ===================
 export async function renderProfileUser() {
   const request = await requestReadProfile(token);
