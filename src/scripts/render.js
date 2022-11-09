@@ -54,10 +54,6 @@ export async function renderAllMyPets(token) {
 
 import { requestReadProfile } from "./requests.js";
 
-
-const token  = getUserTokenLocalStorage();
-
-
 //============== render profile ===================
 export async function renderProfileUser() {
   const request = await requestReadProfile(token);
@@ -73,9 +69,9 @@ export async function renderProfileUser() {
 
 //============== move to home ===================
 
-export function moveToHome (){
-  const button = document.querySelector('#btnToHome')
-  button.addEventListener('click',()=>{
-    window.location.replace('/src/pages/dashboard/index.html')
-  })
+export function moveToHome() {
+  const button = document.querySelector("#btnToHome");
+  button.addEventListener("click", () => {
+    window.location.replace("/src/pages/dashboard/index.html");
+  });
 }
