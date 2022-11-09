@@ -4,6 +4,7 @@ import { toast } from "./toast.js";
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com";
 
 async function registerUser(body) {
+  // console.log(body);
   try {
     const request = await fetch(`${baseUrl}/users`, {
       method: "POST",
@@ -19,7 +20,7 @@ async function registerUser(body) {
         openLoginAuto();
       }, 3000);
     } else {
-      toast("Erro!", "Verifique o e-mail e a url da foto");
+      toast(`Erro!`, ` Verifique o e-mail ou a URL`);
     }
   } catch (err) {
     console.log(err);
@@ -42,9 +43,15 @@ async function requestLogin(body) {
         user: { name, email, avatar_url },
         token,
       } = response;
-      window.location.assign("../dashboard/index.html");
+      console.log(response);
 
-      localStorage.setItem("@kezieAdopt:User", JSON.stringify(token));
+      localStorage.setItem("@kenzieAdopt:User", JSON.stringify(token));
+      toast("Sucesso!", "Direcionando para HomePage");
+      setTimeout(() => {
+        window.location.assign("/src/pages/dashboard/index.html");
+      }, 3000);
+    } else {
+      toast("Erro!", " Verifique o e-mail ou a senha");
     }
   } catch (err) {
     console.log(err);
@@ -98,10 +105,8 @@ async function requestReadProfile(token) {
       },
     });
 
-    if (request.ok) {
-      const response = await request.json();
-      return response;
-    }
+    const response = await request.json();
+    return response;
   } catch (err) {
     console.log(err);
   }
