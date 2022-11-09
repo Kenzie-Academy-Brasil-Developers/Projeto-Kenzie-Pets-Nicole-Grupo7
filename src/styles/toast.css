@@ -5,9 +5,9 @@
   align-items: flex-start;
   padding: 21px 32px;
   gap: 17px;
-  background: #fcfeff;
+  background: var(--color-brand-orange);
   box-shadow: 0px 4px 30px -12px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  border-radius: 16px;
   width: 100%;
   max-width: 442px;
   animation: toastIt 3000ms ease-in forwards;
@@ -69,5 +69,5 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  font-variant: var(--gray200);
+  color: black;
 }
