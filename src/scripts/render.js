@@ -66,3 +66,12 @@ export async function renderProfileUser() {
   nameUser.innerHTML = `<span>nome: </span> ${request.name}`;
   emailUser.innerHTML = `<span>email: </span> ${request.email}`;
 }
+
+//============== move to home ===================
+
+export function moveToHome() {
+  const button = document.querySelector("#btnToHome");
+  button.addEventListener("click", () => {
+    window.location.replace("/src/pages/dashboard/index.html");
+  });
+}
