@@ -19,11 +19,11 @@ export const toast = (title, message) => {
   if (title == "Sucesso!" || title == "Sua conta foi criada com sucesso!") {
     titleToast.classList = "toast-h3Sucess";
     divImg.classList = "box-checkSucess";
-    imgCheck.src = "../../assets/check-solid.svg";
+    imgCheck.src = "/src/assets/check-solid.svg";
   } else {
     titleToast.classList = "toast-h3Error";
     divImg.classList = "box-checkError";
-    imgCheck.src = "../../assets/exclamation-solid.svg";
+    imgCheck.src = "/src/assets/exclamation-solid.svg";
   }
   titleToast.innerText = title;
   messageToast.innerText = message;

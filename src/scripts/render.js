@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { modalEditpet } from "./openModal.js";
+=======
+import { getUserTokenLocalStorage } from "./localStorage.js";
+>>>>>>> 05ade89f41d5d2ae323e4932eba5178a32d43524
 import { requestReadAllMyPets } from "./requests.js";
 
 export async function renderAllMyPets(token) {
@@ -53,11 +57,11 @@ export async function renderAllMyPets(token) {
 
 import { requestReadProfile } from "./requests.js";
 
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Njc5MTg0MjMsImV4cCI6MTY2ODUyMzIyMywic3ViIjoiMWJjYTNlNzUtNjIwNS00NmNmLTk3ZWYtMGE1NDllYzk0YzRjIn0.zURUiOyxu0CjoHk7WNQ5ndn6XCePzWzMmSP7hbtXVOQ";
+const { token } = getUserTokenLocalStorage();
 //============== render profile ===================
 export async function renderProfileUser() {
   const request = await requestReadProfile(token);
+  console.log(request);
   const avatarUser = document.querySelector("#useravatar");
   const nameUser = document.querySelector("#username");
   const emailUser = document.querySelector("#useremail");

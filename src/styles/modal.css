@@ -20,7 +20,12 @@ dialog .containerModal {
 }
 
 dialog .containerModal #btnCloseRegister,
+<<<<<<< HEAD
 #btnCloseLogin, #btnCloseCreatePet, #btnCloseEditPet {
+=======
+#btnCloseLogin,
+#btnCloseCreatePet {
+>>>>>>> 05ade89f41d5d2ae323e4932eba5178a32d43524
   border: none;
   background-color: transparent;
   position: absolute;
@@ -79,6 +84,7 @@ dialog .containerModal .paddingBottom {
   font-size: 14px;
   line-height: 11px;
   color: #1b1c1e;
+  cursor: pointer;
 }
 .containerFormRegister p button {
   border: none;
@@ -88,6 +94,7 @@ dialog .containerModal .paddingBottom {
   font-size: 14px;
   line-height: 11px;
   color: var(--color-brand-orange);
+  cursor: pointer;
 }
 
 /* -----------------Modal Login----------------*/
@@ -120,6 +127,7 @@ dialog .containerModal .paddingBottom {
   font-size: 14px;
   line-height: 11px;
   color: #1b1c1e;
+  cursor: pointer;
 }
 .containerFormLogin p button {
   border: none;
@@ -129,8 +137,7 @@ dialog .containerModal .paddingBottom {
   font-size: 14px;
   line-height: 11px;
   color: var(--color-brand-orange);
+  cursor: pointer;
 }
 
-
 /* -----------------Modal Create Pet----------------*/
-
