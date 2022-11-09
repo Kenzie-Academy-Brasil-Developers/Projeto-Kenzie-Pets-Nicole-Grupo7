@@ -1,5 +1,6 @@
 import { getUserTokenLocalStorage } from "./localStorage.js";
 import { requestReadAllMyPets } from "./requests.js";
+const token = getUserTokenLocalStorage();
 
 export async function renderAllMyPets(token) {
   const ul = document.querySelector(".ulRenderAllMyPets");
@@ -44,7 +45,6 @@ export async function renderAllMyPets(token) {
 
 import { requestReadProfile } from "./requests.js";
 
-const { token } = getUserTokenLocalStorage();
 //============== render profile ===================
 export async function renderProfileUser() {
   const request = await requestReadProfile(token);

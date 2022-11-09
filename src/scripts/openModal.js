@@ -1,4 +1,7 @@
+import { getUserTokenLocalStorage } from "./localStorage.js";
 import { registerUser, requestCreatePet, requestLogin } from "./requests.js";
+
+const token = getUserTokenLocalStorage();
 
 export const openMenuNav = () => {
   const buttonOpen = document.querySelector("#btnModalNav");
@@ -78,7 +81,7 @@ export const openRegisterModalMobile = async () => {
 };
 
 export const openLoginModal = async () => {
-  const buttonOpen = document.querySelectorAll(".btnLogin");
+  const buttonOpen = document.querySelectorAll("#btnLogin");
 
   const modal = document.querySelector("#modalLogin");
   const btnCloseModal = document.querySelector("#btnCloseLogin");
@@ -98,6 +101,37 @@ export const openLoginModal = async () => {
         }
       });
       await requestLogin(body);
+      const token = getUserTokenLocalStorage();
+      console.log(token);
+    });
+  });
+  btnCloseModal.onclick = () => {
+    modal.close();
+  };
+};
+export const openLoginModalMobile = async () => {
+  const buttonOpen = document.querySelectorAll("#btnLoginMobile");
+
+  const modal = document.querySelector(".modalLoginMobile");
+  const btnCloseModal = document.querySelector("#btnCloseLogin");
+  buttonOpen.forEach((element) => {
+    element.addEventListener("click", async (e) => {
+      modal.showModal();
+    });
+    const form = document.querySelector(".loginFormMobile");
+    const elements = [...form.elements];
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const body = {};
+      elements.forEach((ele) => {
+        if (ele.tagName == "INPUT") {
+          body[ele.dataset.id] = ele.value;
+        }
+      });
+      await requestLogin(body);
+      const token = getUserTokenLocalStorage();
+      console.log(token);
     });
   });
   btnCloseModal.onclick = () => {
@@ -157,8 +191,9 @@ export const openCreatePetModal = async (token) => {
           body[ele.id] = ele.value;
         }
       });
+      console.log(body);
 
-      requestCreatePet(token, body);
+      await requestCreatePet(token, body);
       window.location.reload();
     });
   });
