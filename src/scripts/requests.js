@@ -215,6 +215,50 @@ async function requestEditPet(token, body, endpoint) {
   }
 }
 
+import { getAllPets } from "./dasboard/renderAllPets.js"
+async function requestCreateAdoption(petId){
+  const token = JSON.parse(localStorage.getItem('@kenzieAdopt:User'))
+  
+    const request = await fetch(baseUrl + "/adoptions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+      body: JSON.stringify(petId),
+    })
+    .then(res => res.json())
+    .then(res => res)
+    .then(res => {
+      console.log("RESPOSTA API CREATEADOPTION", res)
+      getAllPets()
+      return res
+    })
+    return request
+}
+
+
+async function requestUpdateAdption(changes, adoptionId) {
+  const token = JSON.parse(localStorage.getItem('@kenzieAdopt:User'))
+  try {
+    const request = await fetch(baseUrl + "/adoptions/update/" + adoptionId, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        body: changes,
+      },
+    })
+    if (request.ok) {
+      console.log(response)
+      const response = await request.json();
+      return response;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 export {
   requestReadAllMyPets,
   requestCreatePet,
@@ -227,4 +271,6 @@ export {
   deleteProfile,
   requestAllPets,
   requestEditPet,
+  requestUpdateAdption,
+  requestCreateAdoption,
 };

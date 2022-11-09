@@ -3,6 +3,7 @@ import {
   openCreatePetModal,
   modalEditpet,
 } from "../../scripts/openModal.js";
+import{ loginVerify } from "../../scripts/dasboard/loginVerify.js"
 import { renderAllMyPets } from "../../scripts/render.js";
 import { logout } from "../../scripts/logout.js";
 import { openMenuNavProfile } from "../../scripts/openModalProfile.js";
@@ -17,6 +18,7 @@ import { requestCreatePet } from "../../scripts/requests.js";
 
 const token = getUserTokenLocalStorage();
 
+loginVerify();
 openMenuNav();
 openCreatePetModal(token);
 renderAllMyPets(token);
@@ -24,7 +26,9 @@ openMenuNavProfile();
 renderProfileUser();
 modalUpdateProfile()
 logout();
+modalEditpet();
 modalDeleteProfile()
 moveToHome()
 modalEditpet();
+
 
