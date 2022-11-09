@@ -20,12 +20,9 @@ dialog .containerModal {
 }
 
 dialog .containerModal #btnCloseRegister,
-<<<<<<< HEAD
-#btnCloseLogin, #btnCloseCreatePet, #btnCloseEditPet {
-=======
 #btnCloseLogin,
-#btnCloseCreatePet {
->>>>>>> 05ade89f41d5d2ae323e4932eba5178a32d43524
+#btnCloseCreatePet,
+#btnCloseEditPet {
   border: none;
   background-color: transparent;
   position: absolute;

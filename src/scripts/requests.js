@@ -179,7 +179,6 @@ async function requestReadAllMyPets(token) {
     console.log(err);
   }
 }
-
 async function requestAllPets(token) {
   try {
     const request = await fetch(baseUrl + "/pets", {
@@ -196,9 +195,7 @@ async function requestAllPets(token) {
     console.log(err);
   }
 }
-
-async function requestEditPet(token, body, endpoint){
-
+async function requestEditPet(token, body, endpoint) {
   try {
     const request = await fetch(`${baseUrl}/pets/${endpoint}`, {
       method: "PATCH",
@@ -229,5 +226,5 @@ export {
   requestUpdateProfile,
   deleteProfile,
   requestAllPets,
-  requestEditPet
+  requestEditPet,
 };

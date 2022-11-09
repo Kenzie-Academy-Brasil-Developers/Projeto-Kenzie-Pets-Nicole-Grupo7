@@ -129,7 +129,7 @@ aside img {
     flex-direction: column;
     margin: 1rem;
     gap: 1rem;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 .ulRenderAllMyPets li{

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-import { modalEditpet } from "./openModal.js";
-=======
 import { getUserTokenLocalStorage } from "./localStorage.js";
->>>>>>> 05ade89f41d5d2ae323e4932eba5178a32d43524
+import { modalEditpet } from "./openModal.js";
 import { requestReadAllMyPets } from "./requests.js";
 const token = getUserTokenLocalStorage();
 
@@ -45,15 +42,14 @@ export async function renderAllMyPets(token) {
         `
     );
   });
-  ul.addEventListener("click", async e => {
-    e.preventDefault()
+  ul.addEventListener("click", async (e) => {
+    e.preventDefault();
 
-    if(e.target.tagName == "BUTTON"){
-      console.log(e.target.id)
-      await modalEditpet(token, e.target.id)
-
+    if (e.target.tagName == "BUTTON") {
+      console.log(e.target.id);
+      await modalEditpet(token, e.target.id);
     }
-  })
+  });
 }
 
 import { requestReadProfile } from "./requests.js";
@@ -70,4 +66,3 @@ export async function renderProfileUser() {
   nameUser.innerHTML = `<span>nome: </span> ${request.name}`;
   emailUser.innerHTML = `<span>email: </span> ${request.email}`;
 }
-
