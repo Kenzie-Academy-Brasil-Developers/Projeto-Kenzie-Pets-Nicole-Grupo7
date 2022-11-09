@@ -26,7 +26,7 @@
         <nav>
           <div>
             <button id="btnRegister" class="btnRegister">Cadastrar</button>
-            <button class="btnLogin">Fazer Login</button>
+            <button id="btnLogin" class="btnLogin">Fazer Login</button>
           </div>
           <button class="hidden" id="btnModalNav">
             <img class="imgBtnNav" src="./src/assets/btn menu.png" alt="" />
@@ -40,7 +40,9 @@
                 <button id="btnRegisterMobile" class="btnRegister">
                   Cadastrar
                 </button>
-                <button class="btnLogin">Fazer Login</button>
+                <button id="btnLoginMobile" class="btnLogin">
+                  Fazer Login
+                </button>
               </div>
             </div>
           </dialog>
@@ -142,6 +144,36 @@
         <div class="containerFormLogin">
           <h2>Login</h2>
           <form id="loginModal">
+            <input
+              class="inputForm"
+              data-id="email"
+              placeholder="E-mail"
+              type="email"
+              required
+            />
+            <input
+              class="inputForm"
+              data-id="password"
+              placeholder="Senha"
+              type="password"
+              required
+            />
+            <button class="btnFormYellow">Entrar</button>
+          </form>
+          <p id="btnChange">
+            Não tem cadastro? <button>Clique aqui</button> para se cadastrar.
+          </p>
+        </div>
+        <div class="paddingBottom"></div>
+      </div>
+    </dialog>
+    <dialog class="modalLoginMobile" id="modalLogin">
+      <div class="containerModal">
+        <div class="paddingTop"></div>
+        <button id="btnCloseLogin">X</button>
+        <div class="containerFormLogin">
+          <h2>Login</h2>
+          <form class="loginFormMobile" id="loginModal">
             <input
               class="inputForm"
               data-id="email"

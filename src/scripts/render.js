@@ -4,6 +4,7 @@ import { modalEditpet } from "./openModal.js";
 import { getUserTokenLocalStorage } from "./localStorage.js";
 >>>>>>> 05ade89f41d5d2ae323e4932eba5178a32d43524
 import { requestReadAllMyPets } from "./requests.js";
+const token = getUserTokenLocalStorage();
 
 export async function renderAllMyPets(token) {
   const ul = document.querySelector(".ulRenderAllMyPets");
@@ -57,7 +58,6 @@ export async function renderAllMyPets(token) {
 
 import { requestReadProfile } from "./requests.js";
 
-const { token } = getUserTokenLocalStorage();
 //============== render profile ===================
 export async function renderProfileUser() {
   const request = await requestReadProfile(token);
