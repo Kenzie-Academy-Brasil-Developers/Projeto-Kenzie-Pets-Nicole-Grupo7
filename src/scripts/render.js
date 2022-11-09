@@ -46,7 +46,7 @@ export async function renderAllMyPets(token) {
     e.preventDefault();
 
     if (e.target.tagName == "BUTTON") {
-      console.log(e.target.id);
+      
       await modalEditpet(token, e.target.id);
     }
   });
@@ -57,7 +57,7 @@ import { requestReadProfile } from "./requests.js";
 //============== render profile ===================
 export async function renderProfileUser() {
   const request = await requestReadProfile(token);
-  console.log(request);
+  
   const avatarUser = document.querySelector("#useravatar");
   const nameUser = document.querySelector("#username");
   const emailUser = document.querySelector("#useremail");

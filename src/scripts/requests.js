@@ -215,7 +215,7 @@ async function requestEditPet(token, body, endpoint) {
   }
 }
 
-import { getAllPets } from "./dasboard/renderAllPets.js"
+
 async function requestCreateAdoption(petId){
   const token = JSON.parse(localStorage.getItem('@kenzieAdopt:User'))
   
@@ -229,11 +229,11 @@ async function requestCreateAdoption(petId){
     })
     .then(res => res.json())
     .then(res => res)
-    .then(res => {
+    .then(res =>  {
       console.log("RESPOSTA API CREATEADOPTION", res)
-      getAllPets()
       return res
     })
+    .catch(err=> console.log("ERRO API CREATEADOPT",err))
     return request
 }
 

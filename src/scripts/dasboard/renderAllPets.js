@@ -46,7 +46,8 @@ function renderAllPets(pet) {
             let petId = {
                 pet_id: pet.id
             }
-            await requestCreateAdoption(petId)        
+            await requestCreateAdoption(petId)  
+            window.location.reload()
         })
     } else {
         adoptBtn.classList.add('already-adopted-btn')
