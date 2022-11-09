@@ -179,6 +179,7 @@ async function requestReadAllMyPets(token) {
     console.log(err);
   }
 }
+
 async function requestAllPets(token) {
   try {
     const request = await fetch(baseUrl + "/pets", {
@@ -196,6 +197,27 @@ async function requestAllPets(token) {
   }
 }
 
+async function requestEditPet(token, body, endpoint){
+
+  try {
+    const request = await fetch(`${baseUrl}/pets/${endpoint}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(body),
+    });
+    if (request.ok) {
+      console.log("deu certo");
+    } else {
+      console.log("deu ruim");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 export {
   requestReadAllMyPets,
   requestCreatePet,
@@ -207,4 +229,5 @@ export {
   requestUpdateProfile,
   deleteProfile,
   requestAllPets,
+  requestEditPet
 };

@@ -1,6 +1,3 @@
-import { getUserTokenLocalStorage } from "./localStorage.js";
-import { registerUser, requestCreatePet, requestLogin } from "./requests.js";
-
 const token = getUserTokenLocalStorage();
 
 export const openMenuNav = () => {
@@ -200,31 +197,4 @@ export const openCreatePetModal = async (token) => {
   btnCloseModal.onclick = () => {
     modal.close();
   };
-};
-export const changeModalToRegister = () => {
-  const btnChange = document.querySelector("#btnChange");
-  const modal = document.querySelector("#modalRegister");
-  const modalClose = document.querySelector("#modalLogin");
-
-  btnChange.addEventListener("click", (e) => {
-    e.preventDefault();
-    modal.showModal();
-    modalClose.close();
-  });
-};
-export const changeModalToLogin = () => {
-  const btnChange = document.querySelectorAll(".btnChangeToLogin");
-  const modal = document.querySelector("#modalLogin");
-  const modalClose = document.querySelector("#modalRegister");
-  const modalCloseMobile = document.querySelector(".modalRegisterMobile");
-
-  btnChange.forEach((clique) => {
-    clique.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      modal.showModal();
-      modalClose.close();
-      modalCloseMobile.close();
-    });
-  });
 };
