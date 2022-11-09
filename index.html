@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/header.css" />
+    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+    <link rel="stylesheet" href="./src/styles/cards.css" />
+    <link rel="stylesheet" href="./src/styles/positioning.css" />
+    <link rel="stylesheet" href="./src/styles/inputs.css" />
+    <link rel="stylesheet" href="./src/styles/buttons.css" />
+    <link rel="stylesheet" href="./src/styles/modal.css" />
+    <link rel="stylesheet" href="./src/styles/toast.css" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="containerHeader">
+        <div class="containerLogo">
+          <div class="containerImg">
+            <img src="./src/assets/logo.png" alt="" />
+          </div>
+          <h2>Kenzie Pets</h2>
+        </div>
+        <nav>
+          <div>
+            <button id="btnRegister" class="btnRegister">Cadastrar</button>
+            <button class="btnLogin">Fazer Login</button>
+          </div>
+          <button class="hidden" id="btnModalNav">
+            <img class="imgBtnNav" src="./src/assets/btn menu.png" alt="" />
+          </button>
+          <dialog id="modalNav">
+            <div class="containerNav">
+              <button id="btnCloseNav">
+                <img src="./src/assets/x.png" alt="" />
+              </button>
+              <div class="btnsModalNav">
+                <button id="btnRegisterMobile" class="btnRegister">
+                  Cadastrar
+                </button>
+                <button class="btnLogin">Fazer Login</button>
+              </div>
+            </div>
+          </dialog>
+        </nav>
+      </div>
+    </header>
+    <dialog id="modalRegister">
+      <div class="containerModal">
+        <div class="paddingTop"></div>
+        <button id="btnCloseRegister">X</button>
+        <div class="containerFormRegister">
+          <h2>Cadastrar</h2>
+          <form id="registerForm">
+            <input
+              class="inputForm"
+              id="name"
+              placeholder="Nome"
+              type="text"
+              required
+            />
+            <input
+              class="inputForm"
+              id="email"
+              placeholder="E-mail"
+              type="email"
+              required
+            />
+            <input
+              class="inputForm"
+              id="password"
+              placeholder="Senha"
+              type="password"
+              required
+            />
+            <input
+              class="inputForm"
+              id="avatar_url"
+              placeholder="Url foto de perfil"
+              type="text"
+              required
+            />
+            <button class="btnFormYellow">Cadastrar</button>
+          </form>
+          <p class="btnChangeToLogin">
+            Já tem cadastro? <button>Clique aqui</button> para logar.
+          </p>
+        </div>
+        <div class="paddingBottom"></div>
+      </div>
+    </dialog>
+    <dialog class="modalRegisterMobile" id="modalRegister">
+      <div class="containerModal">
+        <div class="paddingTop"></div>
+        <button class="btnCloseRegisterMobile" id="btnCloseRegister">X</button>
+        <div class="containerFormRegister">
+          <h2>Cadastrar</h2>
+          <form class="registerFormMobile" id="registerForm">
+            <input
+              class="inputForm"
+              id="name"
+              placeholder="Nome"
+              type="text"
+              required
+            />
+            <input
+              class="inputForm"
+              id="email"
+              placeholder="E-mail"
+              type="email"
+              required
+            />
+            <input
+              class="inputForm"
+              id="password"
+              placeholder="Senha"
+              type="password"
+              required
+            />
+            <input
+              class="inputForm"
+              id="avatar_url"
+              placeholder="Url foto de perfil"
+              type="text"
+              required
+            />
+            <button class="btnFormYellow">Cadastrar</button>
+          </form>
+          <p class="btnChangeToLogin">
+            Já tem cadastro? <button>Clique aqui</button> para logar.
+          </p>
+        </div>
+        <div class="paddingBottom"></div>
+      </div>
+    </dialog>
+    <dialog id="modalLogin">
+      <div class="containerModal">
+        <div class="paddingTop"></div>
+        <button id="btnCloseLogin">X</button>
+        <div class="containerFormLogin">
+          <h2>Login</h2>
+          <form id="loginModal">
+            <input
+              class="inputForm"
+              data-id="email"
+              placeholder="E-mail"
+              type="email"
+              required
+            />
+            <input
+              class="inputForm"
+              data-id="password"
+              placeholder="Senha"
+              type="password"
+              required
+            />
+            <button class="btnFormYellow">Entrar</button>
+          </form>
+          <p id="btnChange">
+            Não tem cadastro? <button>Clique aqui</button> para se cadastrar.
+          </p>
+        </div>
+        <div class="paddingBottom"></div>
+      </div>
+    </dialog>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

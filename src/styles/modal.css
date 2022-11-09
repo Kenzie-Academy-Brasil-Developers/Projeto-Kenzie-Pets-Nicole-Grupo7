@@ -1,0 +1,139 @@
+/* -------------------Modal Padrão--------------- */
+dialog::backdrop {
+  background-color: rgb(0 0 0/ 0.2);
+}
+dialog {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
+  border-radius: 16px;
+}
+dialog .containerModal {
+  width: 90vw;
+  max-width: 550px;
+  height: 500px;
+}
+
+dialog .containerModal #btnCloseRegister,
+#btnCloseLogin,
+#btnCloseCreatePet {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  color: var(--color-grey-1000);
+  border: 0.5px solid white;
+  border-radius: 360px;
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-family: "Open Sans", sans-serif;
+}
+
+dialog .containerModal .paddingTop {
+  width: 100%;
+  height: 42px;
+  background-color: var(--color-brand-orange);
+}
+dialog .containerModal .paddingBottom {
+  width: 100%;
+  height: 12px;
+  background-color: var(--color-brand-orange);
+  position: absolute;
+  bottom: 0;
+}
+
+/* ----------------------------------------------*/
+
+/* -----------------Modal Register----------------*/
+
+.containerFormRegister {
+  width: 75%;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: 40px;
+  margin-top: 20px;
+}
+.containerFormRegister h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 110%;
+  color: #90a4ae;
+}
+.containerFormRegister form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.containerFormRegister p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 11px;
+  color: #1b1c1e;
+  cursor: pointer;
+}
+.containerFormRegister p button {
+  border: none;
+  background-color: transparent;
+  color: var(--color-brand-orange);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 11px;
+  color: var(--color-brand-orange);
+  cursor: pointer;
+}
+
+/* -----------------Modal Login----------------*/
+
+.containerFormLogin {
+  width: 75%;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: 40px;
+  margin-top: 35px;
+}
+.containerFormLogin h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 110%;
+  color: #90a4ae;
+  padding-bottom: 20px;
+}
+.containerFormLogin form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.containerFormLogin p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 11px;
+  color: #1b1c1e;
+  cursor: pointer;
+}
+.containerFormLogin p button {
+  border: none;
+  background-color: transparent;
+  color: var(--color-brand-orange);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 11px;
+  color: var(--color-brand-orange);
+  cursor: pointer;
+}
+
+/* -----------------Modal Create Pet----------------*/

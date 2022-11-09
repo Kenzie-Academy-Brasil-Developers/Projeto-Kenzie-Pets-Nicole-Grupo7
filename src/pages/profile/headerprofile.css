@@ -1,0 +1,185 @@
+header {
+    width: 100%;
+    height: 90px;
+    background-color: var(--color-brand-orange);
+    /* -webkit-box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67);
+    box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67); */
+  }
+  header .containerHeader {
+    max-width: 790px;
+    min-width: 375px;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+  }
+  header .containerHeader h2 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-grey-1000);
+  }
+  #btnModalNav {
+    display: flex;
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  #modalNav {
+    position: absolute;
+    top: 90px;
+    margin: 0;
+    border-radius: 0px;
+  }
+  nav div {
+    display: none;
+  }
+  .containerLogo {
+    width: 450px;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-left: 30px;
+  }
+  .containerImg {
+    width: 45px;
+    height: 45px;
+  }
+  .containerLogo img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* ---------------- Modal Nav ------------- */
+  #modalNav {
+    width: 100%;
+    height: 60px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+    position: fixed;
+    top: 90px;
+  
+    padding-left: 27px;
+    padding-right: 27px;
+    z-index: 1;
+    background-color: var(--color-brand-orange);
+  }
+  .containerNav {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .btnsModalNav {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  .btnsModalNav button {
+    border: none;
+    background-color: transparent;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-grey-1000);
+    border: 1px solid white;
+    padding: 10px 10px;
+    border-radius: 8%;
+  }
+  .btnsModalNav button:hover {
+    background-color: #f9575c;
+    border: 1px solid #f9575c;
+    border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+  }
+  #btnCloseNav {
+    position: absolute;
+    display: flex;
+    right: 30px;
+    top: -55px;
+    background-color: transparent;
+    border: none;
+  }
+  
+  @media (min-width: 800px) {
+    header {
+      width: 100%;
+      height: 105px;
+      background-color: var(--color-brand-orange);
+      /* -webkit-box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67);
+      -moz-box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67);
+      box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67); */
+    }
+    header .containerHeader {
+      max-width: 1400px;
+      min-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      height: 100%;
+      justify-content: space-between;
+    }
+    header .containerHeader h2 {
+      font-family: "Quicksand", sans-serif;
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-grey-1000);
+    }
+    #btnModalNav {
+      display: none;
+    }
+    .containerLogo {
+      width: 400px;
+      height: 100%;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .containerImg {
+      width: 60px;
+      height: 60px;
+    }
+    .containerLogo img {
+      width: 100%;
+      height: 100%;
+    }
+  
+    nav div {
+      width: 360px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    nav button {
+      border: none;
+      background-color: transparent;
+      font-family: "Quicksand", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--color-grey-1000);
+      border: 1px solid white;
+      padding: 10px 10px;
+      border-radius: 8%;
+    }
+    nav button:hover {
+      background-color: #f9575c;
+      border: 1px solid #f9575c;
+      border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+    }
+    .btnsModalNav {
+      display: none;
+    }
+    #btnCloseNav {
+      display: none;
+    }
+  }
+  
