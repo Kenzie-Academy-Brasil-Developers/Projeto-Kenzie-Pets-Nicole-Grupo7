@@ -29,6 +29,6 @@ logout();
 modalEditpet();
 modalDeleteProfile()
 moveToHome()
-modalEditpet();
+// modalEditpet();
 
 

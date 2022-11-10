@@ -150,14 +150,16 @@
                 id="name"
                 placeholder="Nome"
                 type="text"
+                required
               />
               <input
                 class="inputForm"
                 id="bread"
                 placeholder="Raça"
                 type="text"
+                required
               />
-              <select class="inputForm" id="species">
+              <select class="inputForm" id="species" required>
                 <option value="">Seleccione especie</option>
                 <option value="Cachorro">Cachorro</option>
                 <option value="Gato">Gato</option>
@@ -170,9 +172,14 @@
                 id="avatar_url"
                 placeholder="link foto de pet"
                 type="url"
+                required
               />
               <button class="btnFormYellow">Editar</button>
             </form>
+            <section class="sectionDeletePet">
+              <p>ou</p>
+              <button id="deletePet">Deletar pet</button>
+            </section>
           </div>
           <div class="paddingBottom"></div>
         </div>
