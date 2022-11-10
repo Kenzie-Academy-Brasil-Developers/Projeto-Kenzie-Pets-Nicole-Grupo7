@@ -195,7 +195,88 @@ async function requestAllPets(token) {
     console.log(err);
   }
 }
+async function requestEditPet(token, body, endpoint) {
 
+  const options = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(body)
+  };
+  
+  fetch(`https://m2-api-adot-pet.herokuapp.com/pets/${endpoint}`, options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+}
+
+
+
+async function requestCreateAdoption(petId){
+  const token = JSON.parse(localStorage.getItem('@kenzieAdopt:User'))
+  
+    const request = await fetch(baseUrl + "/adoptions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+      body: JSON.stringify(petId),
+    })
+    .then(res => res.json())
+    .then(res => res)
+    .then(res =>  {
+      console.log("RESPOSTA API CREATEADOPTION", res)
+      return res
+    })
+    .catch(err=> console.log("ERRO API CREATEADOPT",err))
+    return request
+}
+
+
+async function requestUpdateAdption(changes, adoptionId) {
+  const token = JSON.parse(localStorage.getItem('@kenzieAdopt:User'))
+  try {
+    const request = await fetch(baseUrl + "/adoptions/update/" + adoptionId, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        body: changes,
+      },
+    })
+    if (request.ok) {
+      console.log(response)
+      const response = await request.json();
+      return response;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function requestDeletePet(token, endpoint){
+
+  try{
+      const request = await fetch(baseUrl + "/pets/" + endpoint, {
+        method: "DELETE",
+        headers: {
+        Authorization: `Bearer ${token}`
+        }
+      })
+
+      if (request.ok) {
+        console.log("deu certo")
+      }else{
+        console.log("deu ruim")
+      }
+  }catch(err){
+    console.log(err)
+  }
+}
 export {
   requestReadAllMyPets,
   requestCreatePet,
@@ -207,4 +288,8 @@ export {
   requestUpdateProfile,
   deleteProfile,
   requestAllPets,
+  requestEditPet,
+  requestUpdateAdption,
+  requestCreateAdoption,
+  requestDeletePet
 };

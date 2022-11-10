@@ -13,7 +13,7 @@
   font-family: "Open Sans", sans-serif;
 }
 :root {
-  --color-brand-orange: #f9be4f;
+  --color-brand-orange: rgb(249, 190, 79);
   --color-brand-cards: #fbf4de;
   --color-brand-brown: #675444;
   --color-grey-1000: #ffffff;

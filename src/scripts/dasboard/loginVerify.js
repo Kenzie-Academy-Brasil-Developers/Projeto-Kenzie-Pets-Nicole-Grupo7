@@ -1,9 +1,10 @@
 import { requestReadProfile } from "../requests.js";
 export { loginVerify };
 async function loginVerify() {
-  const token = localStorage.getItem("@kezieAdopt:User");
+
+  const token = JSON.parse(localStorage.getItem("@kenzieAdopt:User"));
   let verify = await requestReadProfile(token);
-  if (verify == undefined) {
+  if (verify.message == 'Invalid token') {
     window.location.replace("../../../index.html");
   }
 }

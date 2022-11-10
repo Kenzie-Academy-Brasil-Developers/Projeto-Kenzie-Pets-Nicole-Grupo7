@@ -1,4 +1,12 @@
-import { registerUser, requestCreatePet, requestLogin } from "./requests.js";
+import { getUserTokenLocalStorage } from "./localStorage.js";
+import {
+  registerUser,
+  requestCreatePet,
+  requestEditPet,
+  requestLogin,
+} from "./requests.js";
+
+const token = getUserTokenLocalStorage();
 
 export const openMenuNav = () => {
   const buttonOpen = document.querySelector("#btnModalNav");
@@ -39,6 +47,8 @@ export const openRegisterModal = async () => {
         }
       });
 
+
+
       registerUser(body);
     });
   });
@@ -68,8 +78,37 @@ export const openRegisterModalMobile = async () => {
           body[ele.id] = ele.value;
         }
       });
+      await registerUser(body);
+    });
+  });
+  btnCloseModal.onclick = () => {
+    modal.close();
+  };
+};
+export const openRegisterModalMobile = async () => {
+  const buttonOpen = document.querySelectorAll("#btnRegisterMobile");
+  const modal = document.querySelector(".modalRegisterMobile");
+  const btnCloseModal = document.querySelector(".btnCloseRegisterMobile");
 
-      registerUser(body);
+  buttonOpen.forEach((element) => {
+    element.addEventListener("click", async (e) => {
+      modal.showModal();
+    });
+
+    const form = document.querySelector(".registerFormMobile");
+    const elements = [...form.elements];
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const body = {};
+
+      elements.forEach((ele) => {
+        if (ele.tagName == "INPUT") {
+          body[ele.id] = ele.value;
+        }
+      });
+
+      await registerUser(body);
     });
   });
   btnCloseModal.onclick = () => {
@@ -78,10 +117,10 @@ export const openRegisterModalMobile = async () => {
 };
 
 export const openLoginModal = async () => {
-  const buttonOpen = document.querySelectorAll(".btnLogin");
-
+  const buttonOpen = document.querySelectorAll("#btnLogin");
   const modal = document.querySelector("#modalLogin");
-  const btnCloseModal = document.querySelector("#btnCloseLogin");
+  const btnClose = document.querySelector("#btnCloseLogin");
+
   buttonOpen.forEach((element) => {
     element.addEventListener("click", async (e) => {
       modal.showModal();
@@ -98,11 +137,44 @@ export const openLoginModal = async () => {
         }
       });
       await requestLogin(body);
+      // const token = getUserTokenLocalStorage();
     });
   });
-  btnCloseModal.onclick = () => {
+  // btnClose.onclick = () => {
+  //   // ;
+  //   console.log("cliquei");
+  btnClose.addEventListener("click", () => {
     modal.close();
-  };
+  });
+};
+
+export const openLoginModalMobile = async () => {
+  const buttonOpen = document.querySelectorAll("#btnLoginMobile");
+
+  const modal = document.querySelector(".modalLoginMobile");
+  const btnCloseModal = document.querySelector("#btnCloseLoginModal");
+  buttonOpen.forEach((element) => {
+    element.addEventListener("click", async (e) => {
+      modal.showModal();
+    });
+    const form = document.querySelector(".loginFormMobile");
+    const elements = [...form.elements];
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const body = {};
+      elements.forEach((ele) => {
+        if (ele.tagName == "INPUT") {
+          body[ele.dataset.id] = ele.value;
+        }
+      });
+      await requestLogin(body);
+      const token = getUserTokenLocalStorage();
+    });
+  });
+  btnCloseModal.addEventListener("click", () => {
+    modal.close();
+  });
 };
 
 export const openMenuNavDashboard = () => {
@@ -158,7 +230,8 @@ export const openCreatePetModal = async (token) => {
         }
       });
 
-      requestCreatePet(token, body);
+
+      await requestCreatePet(token, body);
       window.location.reload();
     });
   });
@@ -166,6 +239,7 @@ export const openCreatePetModal = async (token) => {
     modal.close();
   };
 };
+
 export const changeModalToRegister = () => {
   const btnChange = document.querySelector("#btnChange");
   const modal = document.querySelector("#modalRegister");
@@ -193,3 +267,24 @@ export const changeModalToLogin = () => {
     });
   });
 };
+
+export const modalEditpet = async (token, endpoint, button) => {
+  const buttonOpen = document.querySelectorAll(".btnEditPet");
+  const modal = document.querySelector("#modalEditpet");
+  const btnCloseModal = document.querySelector("#btnCloseEditPet");
+
+  buttonOpen.forEach((element) => {
+    element.addEventListener("click", async (e) => {
+      modal.showModal();
+      console.log("1");
+    });
+
+    console.log("2");
+  });
+
+  btnCloseModal.onclick = () => {
+    modal.close();
+  };
+};
+
+

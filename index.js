@@ -2,6 +2,7 @@ import {
   changeModalToLogin,
   changeModalToRegister,
   openLoginModal,
+  openLoginModalMobile,
   openMenuNav,
   openRegisterModal,
   openRegisterModalMobile,
@@ -13,3 +14,5 @@ openLoginModal();
 openRegisterModalMobile();
 changeModalToRegister();
 changeModalToLogin();
+openLoginModalMobile();
+

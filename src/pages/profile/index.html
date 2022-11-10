@@ -1,77 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="headerprofile.css" />
-    <link rel="stylesheet" href="../../styles/globalStyles.css" />
-    <link rel="stylesheet" href="/src/styles/modal.css" />
-    <link rel="stylesheet" href="/src/styles/inputs.css" />
-    <link rel="stylesheet" href="/src/styles/buttons.css" />
 
-    <link rel="stylesheet" href="../../styles/modal.css" />
-    <title>Document</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="headerprofile.css" />
+  <link rel="stylesheet" href="../../styles/globalStyles.css" />
+  <link rel="stylesheet" href="/src/styles/modal.css" />
+  <link rel="stylesheet" href="/src/styles/inputs.css" />
+  <link rel="stylesheet" href="/src/styles/buttons.css" />
 
-  <body>
-    <header>
-      <div class="containerHeader">
-        <div class="containerLogo">
-          <div class="containerImg">
-            <img src="../../assets/logo.png" alt="" />
-          </div>
-          <h2>Kenzie Pets</h2>
+  <link rel="stylesheet" href="../../styles/modal.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div class="containerHeader">
+      <div class="containerLogo">
+        <div class="containerImg">
+          <img src="../../assets/logo.png" alt="" />
         </div>
-        <nav>
-          <div>
-            <button id="btnlogout" class="btnRegister">Logout</button>
-          </div>
-          <button id="btnModalNav">
-            <img class="imgBtnNav" src="../../assets/btn menu.png" alt="" />
-          </button>
-          <dialog id="modalNav">
-            <div class="containerNav">
-              <button id="btnCloseNav">
-                <img src="../../assets/x.png" alt="" />
-              </button>
-              <div class="btnsModalNav">
-                <button class="btnRegister">Cadastrar</button>
-                <button class="btnLogin">Fazer Login</button>
-              </div>
+        <h2>Kenzie Pets</h2>
+      </div>
+      <nav>
+        <div>
+          <button id="btnToHome" class="btnRegister">Home</button>
+          <button id="btnlogout" class="btnRegister">Logout</button>
+        </div>
+        <button id="btnModalNav">
+          <img class="imgBtnNav" src="../../assets/btn menu.png" alt="" />
+        </button>
+        <dialog id="modalNav">
+          <div class="containerNav">
+            <button id="btnCloseNav">
+              <img src="../../assets/x.png" alt="" />
+            </button>
+            <div class="btnsModalNav">
+              <button class="btnRegister">Home</button>
+              <button class="btnLogin">Logout</button>
             </div>
-          </dialog>
-        </nav>
+          </div>
+        </dialog>
+      </nav>
+    </div>
+  </header>
+  <aside>
+    <img id="useravatar" src="" alt="" />
+  </aside>
+  <section class="userprofile">
+    <div class="user-data-box">
+      <h3>Dados pessoais</h3>
+      <div class="info-user">
+        <p id="username"></p>
+        <p id="useremail"></p>
+        <!-- <p><span> data de nascimento: </span> 17/05/1997</p> -->
       </div>
-    </header>
-    <aside>
-      <img id="useravatar" src="" alt="" />
-    </aside>
-    <section class="userprofile">
-      <div class="user-data-box">
-        <h3>Dados pessoais</h3>
-        <div class="info-user">
-          <p id="username"></p>
-          <p id="useremail"></p>
-          <p><span> data de nascimento: </span> 17/05/1997</p>
-        </div>
-        <div class="buttons-profile-box">
-          <button class="btnYellow-box">Atualizar informações</button>
-          <button class="btndelete">Deletar conta</button>
-        </div>
+      <div class="buttons-profile-box">
+        <button id="updateprofile" class="btnYellow-box">Atualizar informações</button>
+        <button id="deletedProfile" class="btndelete">Deletar conta</button>
       </div>
-    </section>
-    <section class="containerSectionMyPets">
-      <!-- section all pets-->
-      <button id="btnCreatePet">Cadastrar novo pet</button>
-      <dialog id="modalCreatepet">
+    </div>
+    <!----------modal uptade profile--------------->
+
+    <dialog id="modalUpdateProfile">
+      <div class="containerModal">
+        <div class="paddingTop"></div>
+        <button id="btnCloseUptade">X</button>
+        <div class="containerFormRegister">
+          <h2>Atualizar perfil</h2>
+          <form id="updateProfileForm">
+            <input class="inputForm" id="name" placeholder="Nome" type="text" required />
+            <input class="inputForm" id="avatar_url" placeholder="Avatar" type="url" required />
+            <button class="btnFormYellow">Atualizar</button>
+          </form>
+        </div>
+        <div class="paddingBottom"></div>
+      </div>
+    </dialog>
+    <!----------/modal uptade profile--------------->
+    <!----------modal Delete profile--------------->
+
+    <dialog id="modalDeleteProfile">
+      <div class="containerModal">
+        <div class="paddingTop"></div>
+        <button id="btnCloseDelete">X</button>
+        <div class="containerFormDelete">
+          <h2>Deseja mesmo deletar sua conta?</h2>
+          <div class="buttons-modal">
+
+            <button id="btnNotDelete" class="btnFormYellowDelete">Não desejo deletar minha conta</button>
+            <button id="btnDelete" class="btndeletemodal">Quero deletar minha conta</button>
+          </div>
+
+        </div>
+
+        <div class="paddingBottom"></div>
+      </div>
+    </dialog>
+    <!----------/modal delete profile--------------->
+  </section>
+  <section class="containerSectionMyPets">
+    <!-- section all pets-->
+    <button id="btnCreatePet">Cadastrar novo pet</button>
+    <dialog id="modalCreatepet">
+      <div class="containerModal">
+        <div class="paddingTop"></div>
+        <button id="btnCloseCreatePet">X</button>
+        <div class="containerFormRegister">
+          <h2>Cadastrar pet</h2>
+          <form id="createPetForm">
+            <input class="inputForm" id="name" placeholder="Nome" type="text" required />
+            <input class="inputForm" id="bread" placeholder="Raça" type="text" required />
+            <select class="inputForm" id="species">
+              <option value="">Seleccione especie</option>
+              <option value="Cachorro">Cachorro</option>
+              <option value="Gato">Gato</option>
+              <option value="Aves">Aves</option>
+              <option value="Repteis">Repteis</option>
+              <option value="Outros">Outros</option>
+            </select>
+            <input class="inputForm" id="avatar_url" placeholder="link foto de pet" type="url" required />
+            <button class="btnFormYellow">Cadatstrar</button>
+          </form>
+        </div>
+        <div class="paddingBottom"></div>
+      </div>
+    </dialog>
+    <ul class="ulRenderAllMyPets"></ul>
+  </section>
+
+ 
+
+      </dialog>
+    
+      <!-- Modal editar pet-->
+
+      <dialog id="modalEditpet">
         <div class="containerModal">
           <div class="paddingTop"></div>
-          <button id="btnCloseCreatePet">X</button>
+          <button id="btnCloseEditPet">X</button>
           <div class="containerFormRegister">
-            <h2>Cadastrar pet</h2>
-            <form id="createPetForm">
+            <h2>Editar pet</h2>
+            <form id="editPetForm">
               <input
                 class="inputForm"
                 id="name"
@@ -86,7 +159,7 @@
                 type="text"
                 required
               />
-              <select class="inputForm" id="species">
+              <select class="inputForm" id="species" required>
                 <option value="">Seleccione especie</option>
                 <option value="Cachorro">Cachorro</option>
                 <option value="Gato">Gato</option>
@@ -101,17 +174,20 @@
                 type="url"
                 required
               />
-              <button class="btnFormYellow">Cadatstrar</button>
+              <button class="btnFormYellow">Editar</button>
             </form>
+            <section class="sectionDeletePet">
+              <p>ou</p>
+              <button id="deletePet">Deletar pet</button>
+            </section>
           </div>
           <div class="paddingBottom"></div>
         </div>
       </dialog>
-      <ul class="ulRenderAllMyPets"></ul>
     </section>
 
-    <div class="teste"></div>
 
-    <script type="module" src="index.js"></script>
-  </body>
+  <script type="module" src="index.js"></script>
+</body>
+
 </html>
