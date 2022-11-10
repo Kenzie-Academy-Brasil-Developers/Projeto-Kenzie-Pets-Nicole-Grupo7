@@ -47,8 +47,6 @@ export const openRegisterModal = async () => {
         }
       });
 
-
-
       registerUser(body);
     });
   });
@@ -85,36 +83,36 @@ export const openRegisterModalMobile = async () => {
     modal.close();
   };
 };
-export const openRegisterModalMobile = async () => {
-  const buttonOpen = document.querySelectorAll("#btnRegisterMobile");
-  const modal = document.querySelector(".modalRegisterMobile");
-  const btnCloseModal = document.querySelector(".btnCloseRegisterMobile");
+// export const openRegisterModalMobile = async () => {
+//   const buttonOpen = document.querySelectorAll("#btnRegisterMobile");
+//   const modal = document.querySelector(".modalRegisterMobile");
+//   const btnCloseModal = document.querySelector(".btnCloseRegisterMobile");
 
-  buttonOpen.forEach((element) => {
-    element.addEventListener("click", async (e) => {
-      modal.showModal();
-    });
+//   buttonOpen.forEach((element) => {
+//     element.addEventListener("click", async (e) => {
+//       modal.showModal();
+//     });
 
-    const form = document.querySelector(".registerFormMobile");
-    const elements = [...form.elements];
+//     const form = document.querySelector(".registerFormMobile");
+//     const elements = [...form.elements];
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const body = {};
+//     form.addEventListener("submit", async (e) => {
+//       e.preventDefault();
+//       const body = {};
 
-      elements.forEach((ele) => {
-        if (ele.tagName == "INPUT") {
-          body[ele.id] = ele.value;
-        }
-      });
+//       elements.forEach((ele) => {
+//         if (ele.tagName == "INPUT") {
+//           body[ele.id] = ele.value;
+//         }
+//       });
 
-      await registerUser(body);
-    });
-  });
-  btnCloseModal.onclick = () => {
-    modal.close();
-  };
-};
+//       await registerUser(body);
+//     });
+//   });
+//   btnCloseModal.onclick = () => {
+//     modal.close();
+//   };
+// };
 
 export const openLoginModal = async () => {
   const buttonOpen = document.querySelectorAll("#btnLogin");
@@ -230,7 +228,6 @@ export const openCreatePetModal = async (token) => {
         }
       });
 
-
       await requestCreatePet(token, body);
       window.location.reload();
     });
@@ -286,5 +283,3 @@ export const modalEditpet = async (token, endpoint, button) => {
     modal.close();
   };
 };
-
-
