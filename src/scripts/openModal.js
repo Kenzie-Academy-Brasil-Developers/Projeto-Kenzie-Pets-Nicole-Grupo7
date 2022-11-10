@@ -206,6 +206,8 @@ export const openCreatePetModal = async (token) => {
     modal.close();
   };
 };
+
+
 export const changeModalToRegister = () => {
   const btnChange = document.querySelector("#btnChange");
   const modal = document.querySelector("#modalRegister");
@@ -233,7 +235,7 @@ export const changeModalToLogin = () => {
     });
   });
 };
-export const modalEditpet = async (token, endpoint) => {
+export const modalEditpet = async (token, endpoint, button) => {
   const buttonOpen = document.querySelectorAll(".btnEditPet");
   const modal = document.querySelector("#modalEditpet");
   const btnCloseModal = document.querySelector("#btnCloseEditPet");
@@ -241,28 +243,13 @@ export const modalEditpet = async (token, endpoint) => {
   buttonOpen.forEach((element) => {
     element.addEventListener("click", async (e) => {
       modal.showModal();
+      console.log("1")
     });
 
-    const form = document.querySelector("#createPetForm");
-    const elements = [...form.elements];
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const body = {};
-
-      elements.forEach((ele) => {
-        if (
-          (ele.tagName == "INPUT" || ele.tagName == "SELECT") &&
-          ele.value !== ""
-        ) {
-          body[ele.id] = ele.value;
-        }
-      });
-
-      await requestEditPet(token, body, endpoint);
-      window.location.reload();
-    });
+    console.log("2")
   });
+
+
   btnCloseModal.onclick = () => {
     modal.close();
   };

@@ -196,24 +196,23 @@ async function requestAllPets(token) {
   }
 }
 async function requestEditPet(token, body, endpoint) {
-  try {
-    const request = await fetch(`${baseUrl}/pets/${endpoint}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(body),
-    });
-    if (request.ok) {
-      console.log("deu certo");
-    } else {
-      console.log("deu ruim");
-    }
-  } catch (err) {
-    console.log(err);
-  }
+
+  const options = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(body)
+  };
+  
+  fetch(`https://m2-api-adot-pet.herokuapp.com/pets/${endpoint}`, options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
 }
+
 
 
 async function requestCreateAdoption(petId){
@@ -259,6 +258,25 @@ async function requestUpdateAdption(changes, adoptionId) {
   }
 }
 
+async function requestDeletePet(token, endpoint){
+
+  try{
+      const request = await fetch(baseUrl + "/pets/" + endpoint, {
+        method: "DELETE",
+        headers: {
+        Authorization: `Bearer ${token}`
+        }
+      })
+
+      if (request.ok) {
+        console.log("deu certo")
+      }else{
+        console.log("deu ruim")
+      }
+  }catch(err){
+    console.log(err)
+  }
+}
 export {
   requestReadAllMyPets,
   requestCreatePet,
@@ -273,4 +291,5 @@ export {
   requestEditPet,
   requestUpdateAdption,
   requestCreateAdoption,
+  requestDeletePet
 };

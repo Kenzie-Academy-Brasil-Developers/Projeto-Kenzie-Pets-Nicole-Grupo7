@@ -1,6 +1,8 @@
 import { getUserTokenLocalStorage } from "./localStorage.js";
 import { modalEditpet } from "./openModal.js";
-import { requestReadAllMyPets } from "./requests.js";
+import { requestDeletePet, requestEditPet, requestReadAllMyPets } from "./requests.js";
+
+
 const token = getUserTokenLocalStorage();
 
 export async function renderAllMyPets(token) {
@@ -36,7 +38,7 @@ export async function renderAllMyPets(token) {
           <p><strong>Nome:</strong> ${name}</p>
           <p><strong>Espécie:</strong> ${species}</p>
           <p><strong>Adotável:</strong> ${available()}</p>
-          <button id="${id}" class="btnYellow-box btnEditPet"> Atualizar </button>
+          <button id="${id}" class="btnYellow-box"> Atualizar </button>
         </section>
         </li>
         `
@@ -46,8 +48,48 @@ export async function renderAllMyPets(token) {
     e.preventDefault();
 
     if (e.target.tagName == "BUTTON") {
-      
-      await modalEditpet(token, e.target.id);
+     
+      const token = getUserTokenLocalStorage()
+      const endpoint = e.target.id
+      const modal = document.querySelector("#modalEditpet");
+      const btnCloseModal = document.querySelector("#btnCloseEditPet");
+      const form = document.querySelector("#editPetForm");
+      const elements = [...form.elements];
+      const btnDeletepet = document.querySelector("#deletePet")
+   
+      modal.showModal()
+      console.log(btnDeletepet)
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const body = {};
+  
+        elements.forEach((ele) => {
+          if (
+            (ele.tagName == "INPUT" || ele.tagName == "SELECT") &&
+            ele.value !== ""
+          ) {
+            body[ele.id] = ele.value;
+          }
+        });
+                 
+          await requestEditPet(token, body, endpoint)
+          ul.innerHTML = ""
+          await renderAllMyPets(token)
+          modal.close()  
+
+      });
+
+      btnDeletepet.addEventListener("click", async e =>{
+          await requestDeletePet(token, endpoint)
+          ul.innerHTML = ""
+          await renderAllMyPets(token)
+          modal.close()
+      })
+
+      btnCloseModal.onclick = () => {
+        modal.close();
+      };
     }
   });
 }
