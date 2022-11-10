@@ -1,295 +1,285 @@
 aside {
-    width: 100vw;
-    height: 220px;
-    background-color: var(--color-brand-orange);
-    display: flex;
-    justify-content: center;
+  width: 100vw;
+  height: 220px;
+  background-color: var(--color-brand-orange);
+  display: flex;
+  justify-content: center;
 }
 
 aside img {
-    margin-top: 4rem;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    border: 6px solid var(--color-grey-1000);
-
+  margin-top: 4rem;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 6px solid var(--color-grey-1000);
 }
 
 .userprofile {
-    width: 100%;
-    margin-top: 180px;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  margin-top: 180px;
+  display: flex;
+  justify-content: center;
 }
 
 .user-data-box {
-    width: 90%;
-    box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
-    border-radius: 4px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+  width: 90%;
+  box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
-
 .user-data-box h3 {
-    text-align: center;
-    font-size: 24px;
-    color: var(--color-brand-orange);
-    margin-bottom: 1rem;
+  text-align: center;
+  font-size: 24px;
+  color: var(--color-brand-orange);
+  margin-bottom: 1rem;
 }
 
 .user-data-box span {
-    color: var(--color-brand-orange);
-    font-weight: 600;
-    font-size: 1rem;
+  color: var(--color-brand-orange);
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .user-data-box p {
-    font-weight: 600;
-    font-size: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .buttons-profile-box {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 /*=======buttons =========*/
 .btnYellow-box {
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 27px;
-    width: 90%;
-    background: var(--color-brand-orange);
-    border-radius: 16px;
-    padding: 4px 16px;
-    gap: 10px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 19px;
-    color: var(--color-grey-1000);
-    cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 27px;
+  width: 90%;
+  background: var(--color-brand-orange);
+  border-radius: 16px;
+  padding: 4px 16px;
+  gap: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--color-grey-1000);
+  cursor: pointer;
 }
 
 .btndelete {
-    border: 2px solid #EA534A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 27px;
-    width: 90%;
-    background: transparent;
-    border-radius: 16px;
-    padding: 4px 16px;
-    gap: 10px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 19px;
-    color: #EA534A;
-    cursor: pointer;
+  border: 2px solid #ea534a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 27px;
+  width: 90%;
+  background: transparent;
+  border-radius: 16px;
+  padding: 4px 16px;
+  gap: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ea534a;
+  cursor: pointer;
 }
 
-
-#btnNotDelete{
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 27px;
-    width: 270px;
-    background: var(--color-brand-orange);
-    border-radius: 16px;
-    padding: 4px 16px;
-    gap: 10px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 19px;
-    color: var(--color-grey-1000);
-    cursor: pointer;
-
+#btnNotDelete {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 27px;
+  width: 270px;
+  background: var(--color-brand-orange);
+  border-radius: 16px;
+  padding: 4px 16px;
+  gap: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--color-grey-1000);
+  cursor: pointer;
 }
-#btnDelete{
-    border: 2px solid #EA534A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 27px;
-    width: 270px;
-    background: transparent;
-    border-radius: 16px;
-    padding: 4px 16px;
-    gap: 10px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 19px;
-    color: #EA534A;
-    cursor: pointer;
-
+#btnDelete {
+  border: 2px solid #ea534a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 27px;
+  width: 270px;
+  background: transparent;
+  border-radius: 16px;
+  padding: 4px 16px;
+  gap: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ea534a;
+  cursor: pointer;
 }
-.containerFormDelete{
-    height: 300px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+.containerFormDelete {
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
-.containerFormDelete h2{
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 110%;
-    color: var(--color-brand-orange);
+.containerFormDelete h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 110%;
+  color: var(--color-brand-orange);
 }
 
-.buttons-modal{
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.buttons-modal {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-
-
 
 .teste {
-    height: 900px;
-
+  height: 900px;
 }
 
-#btnCreatePet{
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 0.875rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 16px;
-    background: #33CC66;
-    color: aliceblue;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
+#btnCreatePet {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 16px;
+  background: #33cc66;
+  color: aliceblue;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
 }
 
-.ulRenderAllMyPets{
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    gap: 1rem;
-    overflow-y: scroll; 
-    /* height: fit-content; */
+.ulRenderAllMyPets {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  gap: 1rem;
+  /* overflow-y: scroll;  */
+  /* height: fit-content; */
 }
 
-.ulRenderAllMyPets li{
-    width: 100%;
-    height: max-content;
-    display: flex;
-    gap: 1rem;
-    box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
-    border-radius: 4px
+.ulRenderAllMyPets li {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
+  border-radius: 4px;
 }
 
 .ulRenderAllMyPets li > img {
-    width: 35%;
-    border-radius: 4px 0 0 4px;
+  width: 35%;
+  border-radius: 4px 0 0 4px;
 }
 
 .ulRenderAllMyPets li > section {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem 0.5rem;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
 }
 
-strong{
-    color: var(--color-brand-orange);
+strong {
+  color: var(--color-brand-orange);
 }
 
-.sectionDeletePet{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    width: 100%;
+.sectionDeletePet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
 }
 
-.sectionDeletePet > button{
-    border: none;
-    width: 100%;
-    height: 38px;
-    background: #EA534A;
-    border-radius: 16px;
-    padding: 4px 16px;
-    gap: 10px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 19px;
-    color: var(--color-grey-1000);
-    margin-top: 10px;
-    cursor: pointer;
+.sectionDeletePet > button {
+  border: none;
+  width: 100%;
+  height: 38px;
+  background: #ea534a;
+  border-radius: 16px;
+  padding: 4px 16px;
+  gap: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--color-grey-1000);
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 @media (min-width: 800px) {
-    .user-data-box {
-        width: 480px;
-    }
+  .user-data-box {
+    width: 480px;
+  }
 
-    .buttons-profile-box {
-        margin-top: 50px;
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-    }
+  .buttons-profile-box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
 
-    .btnYellow-box {
-        width: 200px;
-    }
+  .btnYellow-box {
+    width: 200px;
+  }
 
-    .btndelete {
-        width: 150px;
-    }
+  .btndelete {
+    width: 150px;
+  }
 
-    .containerSectionMyPets{
-        width: 1100px;
-        margin: 0 auto;
-    }
+  .containerSectionMyPets {
+    width: 1100px;
+    margin: 0 auto;
+  }
 
+  .ulRenderAllMyPets {
+    width: 1100px;
+    height: 80vh;
+    padding: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* overflow: none; */
+  }
 
-    .ulRenderAllMyPets{
-        width: 1100px;
-        height: 80vh;
-        padding: 0.5rem;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        overflow: none;
-    }
-    
-    .ulRenderAllMyPets li{
-        width: 480px;
-        height: 200px;
-    }
-
+  .ulRenderAllMyPets li {
+    width: 480px;
+    height: 200px;
+  }
 }

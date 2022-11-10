@@ -107,7 +107,6 @@ export const openLoginModal = async () => {
       });
       await requestLogin(body);
       const token = getUserTokenLocalStorage();
-      
     });
   });
   btnCloseModal.onclick = () => {
@@ -136,7 +135,6 @@ export const openLoginModalMobile = async () => {
       });
       await requestLogin(body);
       const token = getUserTokenLocalStorage();
-   
     });
   });
   btnCloseModal.onclick = () => {
@@ -196,7 +194,6 @@ export const openCreatePetModal = async (token) => {
           body[ele.id] = ele.value;
         }
       });
-      
 
       await requestCreatePet(token, body);
       window.location.reload();
@@ -206,7 +203,6 @@ export const openCreatePetModal = async (token) => {
     modal.close();
   };
 };
-
 
 export const changeModalToRegister = () => {
   const btnChange = document.querySelector("#btnChange");
@@ -239,16 +235,15 @@ export const modalEditpet = async (token, endpoint, button) => {
   const buttonOpen = document.querySelectorAll(".btnEditPet");
   const modal = document.querySelector("#modalEditpet");
   const btnCloseModal = document.querySelector("#btnCloseEditPet");
-  
+
   buttonOpen.forEach((element) => {
     element.addEventListener("click", async (e) => {
       modal.showModal();
-      console.log("1")
+      console.log("1");
     });
 
-    console.log("2")
+    console.log("2");
   });
-
 
   btnCloseModal.onclick = () => {
     modal.close();
