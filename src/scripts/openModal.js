@@ -47,7 +47,38 @@ export const openRegisterModal = async () => {
         }
       });
 
+
+
       registerUser(body);
+    });
+  });
+  btnCloseModal.onclick = () => {
+    modal.close();
+  };
+};
+export const openRegisterModalMobile = async () => {
+  const buttonOpen = document.querySelectorAll("#btnRegisterMobile");
+  const modal = document.querySelector(".modalRegisterMobile");
+  const btnCloseModal = document.querySelector(".btnCloseRegisterMobile");
+
+  buttonOpen.forEach((element) => {
+    element.addEventListener("click", async (e) => {
+      modal.showModal();
+    });
+
+    const form = document.querySelector(".registerFormMobile");
+    const elements = [...form.elements];
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const body = {};
+
+      elements.forEach((ele) => {
+        if (ele.tagName == "INPUT") {
+          body[ele.id] = ele.value;
+        }
+      });
+      await registerUser(body);
     });
   });
   btnCloseModal.onclick = () => {
@@ -87,7 +118,6 @@ export const openRegisterModalMobile = async () => {
 
 export const openLoginModal = async () => {
   const buttonOpen = document.querySelectorAll("#btnLogin");
-
   const modal = document.querySelector("#modalLogin");
   const btnClose = document.querySelector("#btnCloseLogin");
 
@@ -200,6 +230,7 @@ export const openCreatePetModal = async (token) => {
         }
       });
 
+
       await requestCreatePet(token, body);
       window.location.reload();
     });
@@ -236,6 +267,7 @@ export const changeModalToLogin = () => {
     });
   });
 };
+
 export const modalEditpet = async (token, endpoint, button) => {
   const buttonOpen = document.querySelectorAll(".btnEditPet");
   const modal = document.querySelector("#modalEditpet");
@@ -254,3 +286,5 @@ export const modalEditpet = async (token, endpoint, button) => {
     modal.close();
   };
 };
+
+

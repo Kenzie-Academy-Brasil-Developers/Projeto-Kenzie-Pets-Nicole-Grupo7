@@ -15,3 +15,4 @@ openRegisterModalMobile();
 changeModalToRegister();
 changeModalToLogin();
 openLoginModalMobile();
+
