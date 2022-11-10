@@ -10,6 +10,35 @@ section{
     width: 50%;
 }
 
+.title-home{
+    border-left: 8px solid var(--color-brand-orange);
+    padding: 0  6px;
+    margin-bottom: 5rem;
+}
+#dogimg{
+    border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+    -webkit-box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67);
+    box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.67);
+}
+.member{
+    border-left: 4px solid var(--color-brand-orange);
+    padding: 0  6px;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+span{
+    color: var(--color-brand-orange);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+
+
 @media(max-width: 800px){
     main{
         align-items: center;
