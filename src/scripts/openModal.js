@@ -77,7 +77,7 @@ export const openRegisterModalMobile = async () => {
         }
       });
 
-      registerUser(body);
+      await registerUser(body);
     });
   });
   btnCloseModal.onclick = () => {
@@ -89,7 +89,8 @@ export const openLoginModal = async () => {
   const buttonOpen = document.querySelectorAll("#btnLogin");
 
   const modal = document.querySelector("#modalLogin");
-  const btnCloseModal = document.querySelector("#btnCloseLogin");
+  const btnClose = document.querySelector("#btnCloseLogin");
+
   buttonOpen.forEach((element) => {
     element.addEventListener("click", async (e) => {
       modal.showModal();
@@ -106,18 +107,22 @@ export const openLoginModal = async () => {
         }
       });
       await requestLogin(body);
-      const token = getUserTokenLocalStorage();
+      // const token = getUserTokenLocalStorage();
     });
   });
-  btnCloseModal.onclick = () => {
+  // btnClose.onclick = () => {
+  //   // ;
+  //   console.log("cliquei");
+  btnClose.addEventListener("click", () => {
     modal.close();
-  };
+  });
 };
+
 export const openLoginModalMobile = async () => {
   const buttonOpen = document.querySelectorAll("#btnLoginMobile");
 
   const modal = document.querySelector(".modalLoginMobile");
-  const btnCloseModal = document.querySelector("#btnCloseLogin");
+  const btnCloseModal = document.querySelector("#btnCloseLoginModal");
   buttonOpen.forEach((element) => {
     element.addEventListener("click", async (e) => {
       modal.showModal();
@@ -137,9 +142,9 @@ export const openLoginModalMobile = async () => {
       const token = getUserTokenLocalStorage();
     });
   });
-  btnCloseModal.onclick = () => {
+  btnCloseModal.addEventListener("click", () => {
     modal.close();
-  };
+  });
 };
 
 export const openMenuNavDashboard = () => {
