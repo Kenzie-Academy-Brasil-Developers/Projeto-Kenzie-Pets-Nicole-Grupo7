@@ -98,7 +98,9 @@ export async function renderAllMyPets(token) {
 
 import { requestReadProfile } from "./requests.js";
 
+
 //============== render profile ===================
+
 export async function renderProfileUser() {
   const request = await requestReadProfile(token);
 

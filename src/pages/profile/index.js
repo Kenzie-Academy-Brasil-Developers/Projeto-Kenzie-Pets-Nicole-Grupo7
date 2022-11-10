@@ -11,6 +11,7 @@ import { modalUpdateProfile } from "../../scripts/openModalProfile.js";
 import { renderProfileUser } from "../../scripts/render.js";
 import { getUserTokenLocalStorage } from "../../scripts/localStorage.js";
 
+
 import { modalDeleteProfile } from "../../scripts/openModalProfile.js";
 import { moveToHome } from "../../scripts/render.js";
 
